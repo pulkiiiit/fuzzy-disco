@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <p>Project under work</p>
-    <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="script.js"></script><!-- defer makes the HTML body load first then the script -->
+    <title>Ping pong game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="title">PONG</h1>
+    <span class="socre player1Score" id="player1Score">0</span>
+    <span class="socre player2Score" id="player2Score">0</span>
+    <h3 class="startText" id="startText">Press any key to start the game</h3>
+    <div class="gameArea">
+      <div id="paddle1" class="paddle1 paddle"></div>
+      <div id="paddle2" class="paddle2 paddle"></div>
+      <div id="ball" class="ball"></div>
+      <div class="net"></div>
+    </div>
+    <img src="/assets/machine.png" alt="Arcade ping pong machine" class="bg">
+    <div class="vignett"></div>
+    <audio src="/assets/paddle.wav" id="paddleSound"></audio>
+    <audio src="/assets/wall.wav" id="wallSound"></audio>
+    <audio src="/assets/loss.wav" id="lossSound"></audio>
+  </body>
 </html>

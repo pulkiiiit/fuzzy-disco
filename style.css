@@ -1,0 +1,117 @@
+body {
+    font-family: "Press Start 2P", system-ui;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #111;
+    color: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+  }
+
+  .gameArea{
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    background: rgba(7, 26, 49, 0.6);
+    top: 182px;
+    border: #919bbec7 10px solid;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    /*transform here make our game area fit into the screen area of the image 
+    it uses three things 
+    1. prespective -> how far are we away from the screen that is measured by z  axix 
+    2. Rotate -> we will rotate around the x axix to get a proper viewing angle till we get what we want 
+    3. sacle -> we will scale x and y accordingly to get our result */
+    transform: perspective(1000px) rotateX(33deg) scaleX(0.54) scaleY(0.84);
+  }
+
+  .bg{
+    position: absolute;
+    height: 1000px;
+    z-index: -1;/*this move the img of the machine behind the game area */
+  }
+
+  .paddle {
+    height: 100px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.9) ;
+    position: absolute;/* giving the paddle the absolute psotion make it adust it perspective accoring to the gameArea */
+    top: 150px;/* we have postion it according to our game area height which is 400 half of which is 200 but we also have to minus half height of our paddle to make it appear completelyin the middle so that's why it is 150px*/
+
+  }
+
+  .paddle2 {
+    right: 0;
+  }
+
+  .ball{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 2px;
+    left: 290px;/* smae concept as paddle*/
+    top: 190px;
+    box-shadow: 4px 10px 2px rgba(0, 0, 0, 0.9 );
+  }
+
+  .net{
+    position: absolute;
+    border-right: 8px rgba(255, 255, 255, 0.3 ) dotted;
+    height: 96%;
+    top: 2%;
+    left: calc(50% - 4px);
+  }
+
+  .title {
+    position: absolute;
+    top: 88px;
+    font-size: 26px;
+  }
+
+  .socre {
+    position: absolute;
+    top: 88px;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player1Score {
+    left: calc(50% - 200px);
+  }
+
+  .player2Score {
+    right: calc(50% - 200px);
+  }
+
+  .startText {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: #222;
+    border-radius: 4px;
+    padding: 10px;
+  }
+
+  .vignett {
+    height: 100dvh;
+    width: 100dvw;
+    background: redial-gradient(
+    circle, 
+    rgba(0,0,0,0) 50%,
+    rgba(0, 0 , 0, 1) 100%
+    );
+  }
+
+
+
+  
